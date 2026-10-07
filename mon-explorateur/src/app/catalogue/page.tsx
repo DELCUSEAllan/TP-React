@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import "./catalogue.css";
 import { EmptyState } from "@/components/ui/empty-state";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { getAlbums } from "@/features/catalog/service";

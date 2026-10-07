@@ -80,8 +80,8 @@ export default function HomePage() {
             <strong>Électro</strong>
           </Link>
           <Link href="/catalogue?q=Dracaufeu">
-            <span>Coldplay</span>
-            <strong>Commercial</strong>
+            <span>Commercial</span>
+            <strong>Coldplay</strong>
           </Link>
           <Link href="/catalogue?q=Mewtwo">
             <span>EDM</span>
