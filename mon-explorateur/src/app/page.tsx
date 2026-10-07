@@ -1,69 +1,101 @@
+import Link from "next/link";
+import { SectionHeading } from "@/components/ui/section-heading";
 import Image from "next/image";
-import styles from "./page.module.css";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main id="main-content">
+      <section className="hero">
+        <div className="container hero__grid">
+          <SectionHeading
+            eyebrow="Projet guide Next.js"
+            title="Votre collection de musique commence ici."
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+            <p>Explorez les cartes versions musiques ! Observez les détails des albums et gardez les dans votre collection. Bon amusement.</p>
+            <div className="actions">
+              <Link className="button button--primary" href="/catalogue">
+                Explorer le catalogue
+              </Link>
+              <Link className="button button--secondary" href="/favoris">
+                Voir mes favoris
+              </Link>
+            </div>
+          </SectionHeading>
+
+          <Image
+            className="hero-card-image"
+            src="/carte-ITunes.webp"
+            alt="Carte iTunes Musique"
+            width={280}
+            height={400}
             />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section
+        className="container page-section"
+        aria-labelledby="project-title"
+      >
+        <p className="eyebrow">Le projet</p>
+        <h2 id="project-title" className="display-title">
+          Une API réelle, une interface vivante.
+        </h2>
+        <div className="feature-grid">
+          <article>
+            <span>01</span>
+            <h3>Rechercher</h3>
+            <p>
+              Les critères sont conservés dans l’URL et peuvent être partagés.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Observer</h3>
+            <p>
+              Chaque carte réagit au pointeur avec une profondeur calculée en
+              direct.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Conserver</h3>
+            <p>
+              Les favoris sont partagés entre les écrans et persistent
+              localement.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="container showcase" aria-labelledby="showcase-title">
+        <div>
+          <p className="eyebrow">Sélection rapide</p>
+          <h2 id="showcase-title" className="display-title">
+            Quatre recherches pour commencer.
+          </h2>
+        </div>
+        <div className="showcase__links">
+          <Link href="/catalogue?q=Pikachu">
+            <span>David Guetta</span>
+            <strong>Électro</strong>
+          </Link>
+          <Link href="/catalogue?q=Dracaufeu">
+            <span>Coldplay</span>
+            <strong>Commercial</strong>
+          </Link>
+          <Link href="/catalogue?q=Mewtwo">
+            <span>EDM</span>
+            <strong>Martin Garrix</strong>
+          </Link>
+          <Link href="/catalogue?q=Evoli">
+            <span>EDM</span>
+            <strong>Avicii</strong>
+          </Link>
+        </div>
+      </section>
+
+      <div className="container">
+      </div>
+    </main>
   );
 }
