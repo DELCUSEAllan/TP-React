@@ -116,6 +116,13 @@ export async function getAlbumDetails(
 
   const fullAlbumPayload = {
     ...albumData,
+
+    id: albumData.collectionId,
+    name: albumData.collectionName,
+    imageUrl: albumData.artworkUrl100 ?? null,
+    category: albumData.primaryGenreName,
+    price: albumData.collectionPrice,
+
     tracks: songsData.map((song) => ({
       trackId: song.trackId,
       name: song.trackName,
