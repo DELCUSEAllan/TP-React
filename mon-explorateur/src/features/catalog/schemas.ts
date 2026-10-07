@@ -27,6 +27,7 @@ export const albumDetailSchema = albumBriefSchema.extend({
   currency: z.string().default("EUR"),
   releaseDate: z.string(),
   copyright: z.string().nullish(),
+  collectionViewUrl: z.string().url(),
   tracks: z.array(trackSchema).default([]),
 });
 
